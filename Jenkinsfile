@@ -12,14 +12,6 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                script {
-                    // Your build steps here (if any)
-                }
-            }
-        }
-
         stage('Deploy') {
             steps {
                 script {
@@ -33,7 +25,9 @@ pipeline {
                     echo "Portfolio is available at: http://localhost:${PORT}/nimra.html"
 
                     // Open the portfolio in the default web browser
-                    sh "xdg-open http://localhost:${PORT}/nimra.html || open http://localhost:${PORT}/nimra.html || start http://localhost:${PORT}/nimra.html"
+                    script {
+                        sh "xdg-open http://localhost:${PORT}/nimra.html || open http://localhost:${PORT}/nimra.html || start http://localhost:${PORT}/nimra.html"
+                    }
                 }
             }
         }
