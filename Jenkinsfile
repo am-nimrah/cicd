@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Copy nimra.html to the workspace
-                    sh 'cp nimra.html .'
+                    sh 'cp nimra.html ${WORKSPACE}'
 
                     // Start a simple Python HTTP server to serve the HTML file
                     sh "python3 -m http.server ${PORT} &"
