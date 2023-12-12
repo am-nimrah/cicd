@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git branch: 'main', credentialsId: '58e211e2-3840-475b-838e-ef0965970c97', url: 'https://github.com/am-nimrah/cicd.git'
+                    git branch: 'main', credentialsId: 'git-credential', url: 'https://github.com/am-nimrah/cicd.git'
                 }
             }
         }
