@@ -6,6 +6,10 @@ pipeline {
       steps {
         git url: 'https://github.com/am-nimrah/cicd.git', branch: 'main'
       }
+	stage('Access Code2') {
+      steps {
+        git url: 'https://github.com/am-nimrah/cicd.git', branch: 'main'
+      }
     }
   }
 
