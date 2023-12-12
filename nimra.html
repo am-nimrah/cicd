@@ -3,21 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nimra's Portfolio</title>
+    <title>Nimra Waqar's Portfolio</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            color: #495057;
         }
 
         header {
-            background-color: #333;
+            background-color: #343a40;
             color: #fff;
             text-align: center;
-            padding: 1em;
+            padding: 1em 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-weight: bold;
+            color: #fff;
+            font-size: 1.5em;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.2em;
         }
 
         section {
@@ -25,78 +38,247 @@
             margin: 20px auto;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
         }
 
         h1, h2, h3 {
-            color: #333;
+            color: #343a40;
         }
 
         p {
             line-height: 1.6;
-            color: #555;
+            color: #6c757d;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
         }
 
         footer {
-            background-color: #333;
+            background-color: #343a40;
             color: #fff;
             text-align: center;
-            padding: 1em;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 1em 0;
+            clear: both;
         }
 
         a {
-            color: #007BFF;
+            color: #007bff;
             text-decoration: none;
         }
 
         a:hover {
             text-decoration: underline;
         }
+
+        section h2 {
+            color: #007bff;
+        }
+
+        section ul {
+            padding-left: 0;
+        }
+
+        section li {
+            margin-bottom: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        section li:hover {
+            color: #007bff;
+        }
+
+        section li::before {
+            content: '➤';
+            color: #007bff;
+            position: absolute;
+            left: -1em;
+        }
+
+        section p {
+            display: none;
+            margin-top: 5px;
+            color: #495057;
+        }
+
+        section li:hover p {
+            display: block;
+        }
+
+        section h2, section h3 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        section h3 {
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            footer p {
+                font-size: 0.8em;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Nimra's Portfolio</h1>
-        <p>Web Developer</p>
+        <h1>Nimra Waqar's Portfolio</h1>
+        <p>Software Engineering Student</p>
     </header>
 
     <section>
         <h2>About Me</h2>
-        <p>Hi, I'm Nimra, a passionate web developer with a focus on creating user-friendly and visually appealing websites.</p>
+        <strong>
+            I am a dedicated software engineering student, deeply passionate about exploring the vast possibilities of technology.
+            My journey in the world of programming languages, including C, C#, Java, and Python, has ignited my drive to create innovative solutions that leave a lasting impact.
+            One of the highlights of my journey has been my role as a core team member with Google Developer Student Club (GDSC).
+            Working within this vibrant tech community, I've had the incredible opportunity to collaborate with like-minded enthusiasts and learn from some of the best minds in the industry.
+            From wielding the magic of Visual Studio Code to harnessing the power of Google Colab, I thrive in various development environments.
+            My experience extends beyond programming languages to include MySQL, enabling me to craft robust, data-driven applications that make a difference.
+            Apart from my technical prowess, I am skilled in documentation, using tools like Word, PowerPoint, and Excel to effectively communicate ideas and drive impactful projects forward.
+            As I continue my journey in software engineering, I am constantly seeking new ways to level up my skills and knowledge.
+            Together, let's leverage the magic of technology to unlock the full potential of intelligent systems and transform the world we live in!
+        </strong>
     </section>
 
     <section>
         <h2>Skills</h2>
+        <h3>Soft Skills</h3>
         <ul>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <!-- Add more skills as needed -->
+            <li>
+                <strong>Teamwork</strong>
+                <p>Ability to collaborate effectively in a team environment.</p>
+            </li>
+            <li>
+                <strong>Communication</strong>
+                <p>Effective communication skills for conveying ideas and driving projects forward.</p>
+            </li>
+            <!-- Add more soft skills as needed -->
+        </ul>
+
+        <h3>Programming Languages</h3>
+        <ul>
+            <li>
+                <strong>C</strong>
+                <p>Experience in C programming language.</p>
+            </li>
+            <li>
+                <strong>C#</strong>
+                <p>Experience in C# programming language.</p>
+            </li>
+            <li>
+                <strong>Java</strong>
+                <p>Experience in Java programming language.</p>
+            </li>
+            <li>
+                <strong>Python</strong>
+                <p>Proficient in Python for various applications.</p>
+            </li>
+            <!-- Add more programming languages as needed -->
         </ul>
     </section>
 
     <section>
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="#">Project 1</a> - Short description of project 1.</li>
-            <li><a href="#">Project 2</a> - Short description of project 2.</li>
-            <!-- Add more projects as needed -->
-        </ul>
+        <h2>Experience</h2>
+	            <strong>Core Team Member of GDSC Teach Team for tenure 2022-2023</strong>
     </section>
 
     <section>
-        <h2>Contact</h2>
-        <p>Email: your.email@example.com</p>
-        <p>LinkedIn: <a href="#">linkedin.com/in/yourname</a></p>
-        <p>GitHub: <a href="#">github.com/yourusername</a></p>
-    </section>
+        <h2>Education</h2>
+            <strong>Bachelor's degree, Computer Software Engineering</strong>
+	<strong>COMSATS University Islamabad Attock Campus</strong>
+	<strong>Sep 2020 - Jun 2024</strong>
+	</section>
+
+    <section>
+    <h2>Licenses & Certifications</h2>
+    <ul>
+        <li>
+            <strong>Introduction to SQL - DataCamp</strong>
+            <p>Learned the fundamentals of SQL for effective data management.</p>
+        </li>
+        <li>
+            <strong>Introduction to Python - DataCamp</strong>
+            <p>Explored the basics of Python programming language for versatile applications.</p>
+        </li>
+        <li>
+            <strong>Understanding Machine Learning - DataCamp</strong>
+            <p>Gained insights into the principles and applications of machine learning.</p>
+        </li>
+        <li>
+            <strong>Introduction to Data Visualization - DataCamp</strong>
+            <p>Explored techniques for creating impactful data visualizations.</p>
+        </li>
+        <li>
+            <strong>Understanding Data Engineering - DataCamp</strong>
+            <p>Learned the essentials of data engineering for robust data pipelines.</p>
+        </li>
+        <li>
+            <strong>Introduction to Cloud Computing - DataCamp</strong>
+            <p>Explored cloud computing concepts and their applications.</p>
+        </li>
+        <li>
+            <strong>Machine Learning with Python - IBM</strong>
+            <p>Completed a course on machine learning using Python with a focus on practical applications.</p>
+        </li>
+        <li>
+            <strong>Introduction to Artificial Intelligence (AI) - IBM</strong>
+            <p>Gained foundational knowledge in artificial intelligence concepts and applications.</p>
+        </li>
+        <li>
+            <strong>Machine Learning with Python - Coursera</strong>
+            <p>Successfully completed a machine learning course on Coursera, covering key algorithms and techniques.</p>
+        </li>
+        <li>
+            <strong>Getting started with Flutter Development - Google Cloud Community India</strong>
+            <p>Explored the basics of Flutter development for cross-platform mobile applications.</p>
+        </li>
+        <li>
+            <strong>Technical Core Team Member - Google Developer Student Clubs</strong>
+            <p>Active participation as a technical core team member in Google Developer Student Clubs.</p>
+        </li>
+        <li>
+            <strong>Python Primers Challenge with ALPHA Microsoft Learn Student Ambassador</strong>
+            <p>Participated in Python Primers Challenge organized by Microsoft Learn Student Ambassadors.</p>
+        </li>
+    </ul>
+</section>
+
+
+    <section>
+    <h2>Contact</h2>
+    <ul>
+        <li><strong>Email:</strong> nimrahwaqar1@gmail.com</li>
+        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/nimrah-waqar">linkedin.com/in/nimrah-waqar</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/am-nimrah">github.com/am-nimrah</a></li>
+	</ul>
+</section>
+
 
     <footer>
-        <p>&copy; 2023 Nimra's Portfolio</p>
+        <p>&copy; 2023 Nimra Waqar's Portfolio</p>
     </footer>
 </body>
 </html>
