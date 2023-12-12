@@ -7,16 +7,6 @@ pipeline {
         git url: 'https://github.com/am-nimrah/cicd.git', branch: 'main'
       }
     }
-    stage('Compile Code') {
-      steps {
-        sh 'javac GuessTheNumber.java'
-      }
-    }
-    stage('Execute Game') {
-      steps {
-        sh 'java GuessTheNumber'
-      }
-    }
   }
 
   post {
