@@ -2,13 +2,15 @@ pipeline {
     agent any
 
     environment {
-        PORT = 8000 // You can use any available port
+        PORT = 8080 // You can use any available port
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/am-nimrah/cicd.git'
+                script {
+                    git branch: 'main', credentialsId: '58e211e2-3840-475b-838e-ef0965970c97', url: 'https://github.com/am-nimrah/cicd.git'
+                }
             }
         }
 
