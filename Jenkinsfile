@@ -2,26 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout Code') {
+        stage('Access Code') {
             steps {
                 git url: 'https://github.com/am-nimrah/cicd.git', branch: 'main'
             }
-        }
-        stage('Build & Compile') {
-            steps {
-                sh 'javac GuessTheNumber.java'
-            }
-        }
-        stage('Run the Game') {
-            steps {
-                sh 'java GuessTheNumber'
-            }
-        }
-        stage('Publish Results') {
-            steps {
-                archiveArtifacts artifacts: 'GuessTheNumber.class,README.md', fingerprint: true
-            }
-        }
+        }     
+        
     }
 
     post {
