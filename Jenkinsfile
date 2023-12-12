@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout & Compile') {
             steps {
                 git url: 'https://github.com/am-nimrah/cicd.git', branch: 'main'
-                sh 'javac GuessTheNumber.java'
+                sh "PATH=$PATH:/path/to/java/bin && javac GuessTheNumber.java"
             }
         }
         stage('Execute Game') {
