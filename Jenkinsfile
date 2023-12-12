@@ -9,7 +9,11 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git branch: 'main', credentialsId: 'git-credential', url: 'https://github.com/am-nimrah/cicd.git'
+                    // Clean workspace before checkout
+                    deleteDir()
+
+                    // Checkout the main branch
+                    git credentialsId: 'git-credential', url: 'https://github.com/am-nimrah/cicd.git', branch: 'main'
                 }
             }
         }
