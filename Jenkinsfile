@@ -21,4 +21,3 @@ pipeline {
       echo 'GuessTheNumber game build or execution failed!'
     }
   }
-}
