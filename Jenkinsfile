@@ -1,25 +1,41 @@
 pipeline {
-  agent any
+    agent any
 
-  stages {
-    stage('Access Code') {
-      steps {
-        git url: 'https://github.com/am-nimrah/cicd.git', branch: 'main'
-      }
-    stage('Access Code2') {
-      steps {
-        git url: 'https://github.com/am-nimrah/cicd.git', branch: 'main'
-      }
+    environment {
+        PORT = 8000 // You can use any available port
     }
-  }
 
-  post {
-    success {
-      echo 'GuessTheNumber game built and run successfully!'
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/am-nimrah/cicd.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    // Your build steps here (if any)
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    // Copy nimra.html to the workspace
+                    sh 'cp nimra.html .'
+
+                    // Start a simple Python HTTP server to serve the HTML file
+                    sh "python3 -m http.server ${PORT} &"
+
+                    // Display the URL in the Jenkins console
+                    echo "Portfolio is available at: http://localhost:${PORT}/nimra.html"
+
+                    // Open the portfolio in the default web browser
+                    sh "xdg-open http://localhost:${PORT}/nimra.html || open http://localhost:${PORT}/nimra.html || start http://localhost:${PORT}/nimra.html"
+                }
+            }
+        }
     }
-    failure {
-      echo 'GuessTheNumber game build or execution failed!'
-    }
-  }
 }
-}}
