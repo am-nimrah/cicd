@@ -1,42 +1,28 @@
 pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                script {
-                    // Clone the Git repository
-                    checkout scm
-
-                    // Build the Docker image
-                    sh 'docker build -t nimrah/portfolio:latest .'
-                }
-            }
-        }
-
-        stage('Test') {
-            steps {
-                script {
-                    // Add your testing steps here if needed
-                }
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                script {
-                    // Deploy the Docker container to Azure
-                    sh "docker login -u $DOCKER_HUB_USERNAME -p ${DOCKER_HUB_PASSWORD} ${DOCKER_REGISTRY}"
-                    sh 'docker push nimrah/portfolio:latest'
-                    sh 'ssh azure-user@your-azure-vm-ip "docker pull nimrah/portfolio:latest && docker stop your-container-name && docker rm your-container-name && docker run -d -p 80:80 --name your-container-name nimrah/portfolio:latest"'
-                }
-            }
-        }
+    agent any 
+    
+    environment {
+        DOCKER_PASSWORD = credentials('docker_password')
     }
+    stages { 
+        stage('SCM Checkout') {
+            steps{
+            git 'https://github.com/am-nimrah/portfolio.git'
+            }
+        }
 
-    post {
-        failure {
-            // Email notification in case of a failed deployment
-            emailext attachLog: true, subject: 'Failed Deployment - Your Web App', body: 'The deployment of your web app has failed. Please investigate.'
+        stage('Build docker image') {
+            steps {  
+                bat 'docker build -t nimrah/webportfolio .'
+            }
+        }
+
+        stage('Login to Docker') {
+            steps {
+                bat "echo ${DOCKER_PASSWORD}|docker login -u nimrah --password-stdin"
+                //bat 'docker login -u nimrah -p ${DOCKER_PASSWORD} localhost'
+            }
+        }
         }
     }
 }
